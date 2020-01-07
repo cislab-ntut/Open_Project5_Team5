@@ -50,6 +50,20 @@ d:	[4,5,6]
 這個function很簡單，就是不斷呼叫loss()來計算gradient，並依照算出來的gradient來改變theta值，我設定的停止條件是跑到設定的iteration就停止。
 5.	predict()
 用來預測test data的function，會回傳一個list，內容為預測的房價的normalize數值，在main()還要做處理，才會是最終的結果。
+6.  paillier介紹
+```
+宣告: public_key, private_key = paillier.generate_paillier_keypair()
+分別使用public_key、private_key來加密、解密
+```
+```
+加密: y = public_key.encrypt(x)
+x為要加密的資料
+```
+```
+解密: output = private_key.decrypt(y)
+y為要解密的資料
+```
+
 ### 資料前處理
 #### 讀取資料
 我先用pandas將csv檔讀進來，這是因為如果用numpy的話會無法處理內容為字串的資料。
